@@ -18,6 +18,11 @@ This is the home page. It will include the following:
 - Form to login
 - Counter of how many people have visited/reported/created accounts
 
+![Home Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/wireframe/160513-rdo-wireframe-home.jpg)
+
+![Navigation](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/wireframe/160513-rdo-wireframe-nav.jpg)
+
+
 ## /entrar
 
 This is the view where people will be able to login or create a new account.
