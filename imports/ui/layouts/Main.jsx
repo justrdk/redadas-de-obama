@@ -63,15 +63,15 @@ export default class Main extends Component {
     const contentHeader = (
       <span>
         {!this.state.docked &&
-         <a onClick={this.toggleOpen} href="#" style={styles.contentHeaderMenuLink}>=</a>}
-        <span> Responsive React Sidebar</span>
+         <a onClick={this.toggleOpen.bind(this)} href="#" style={styles.contentHeaderMenuLink}>=</a>}
+        <span> Redadas de Obama</span>
       </span>);
 
     const sidebarProps = {
       sidebar: sidebar,
       docked: this.state.docked,
       open: this.state.open,
-      onSetOpen: this.onSetOpen,
+      onSetOpen: this.onSetOpen.bind(this),
     };
 
     return (
