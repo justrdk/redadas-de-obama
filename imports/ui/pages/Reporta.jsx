@@ -5,7 +5,7 @@ export default class Reporta extends Component {
 	render() {
 		return (
 			<div>
-				Reporta
+				<h2>Reporta</h2>
 			</div>
 		)
 	}

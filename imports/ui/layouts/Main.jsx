@@ -30,9 +30,9 @@ export default class Main extends Component {
 	constructor(props) {
 	    super(props);
 
-	    this.state = {
-
-	    };
+	    // this.state = {
+			//
+	    // };
 	}
 
 	getInitialState() {
@@ -89,7 +89,7 @@ export default class Main extends Component {
         <MaterialTitlePanel title={contentHeader}>
           <div style={styles.content}>
 						{this.props.yield}
-            
+
           </div>
         </MaterialTitlePanel>
       </Sidebar>
