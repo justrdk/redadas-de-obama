@@ -29,6 +29,12 @@ People can take on an issue, work on it, and submit a pull request when ready.
 
 We will also be experimenting with [ZenHub](https://www.zenhub.com/) for worklow, so be sure to install that browser plugin to see the cool extra interfaces ZenHub provides.
 
+## Contributor Covenant
+
+The maintainer of this project is committed to making sure this project provides a safe space for people of all genders, races, and levels of programmer proficiency. Everyone has something valuable to contribute.
+
+We will also enforce our [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md) should you engage in behaviors not in line with the project's, and Movimiento Cosecha's values.
+
 ## Not a Developer, How Can I Contribute?
 
 There are plenty of ways:
