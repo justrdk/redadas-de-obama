@@ -30,6 +30,7 @@ const SidebarContent = (props) => {
   };
   const style = props.style ? {...styles.sidebar, ...props.style} : styles.sidebar;
 
+	// This should be deleted soon
   const links = [];
 
   for (let ind = 0; ind < 10; ind++) {
@@ -40,10 +41,14 @@ const SidebarContent = (props) => {
   return (
     <MaterialTitlePanel title="Menu" style={style}>
       <div style={styles.content}>
-        <a href="index.html" style={styles.sidebarLink}>Home</a>
-        <a href="responsive_example.html" style={styles.sidebarLink}>Responsive Example</a>
-        <div style={styles.divider} />
-        {links}
+        <a href="/" style={styles.sidebarLink}>Inicio</a>
+        <a href="/reporta" style={styles.sidebarLink}>Reporta</a>
+        <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
+				<a href="#" style={styles.sidebarLink}>Comparte</a>
+				<a href="/privacidad" style={styles.sidebarLink}>Privacidad</a>
+
+				<div style={styles.divider} />
+				<a href="/salir" style={styles.sidebarLink}>Salir</a>
       </div>
     </MaterialTitlePanel>
   );

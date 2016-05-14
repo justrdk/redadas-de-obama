@@ -10,11 +10,19 @@ const styles = {
   contentHeaderMenuLink: {
     textDecoration: 'none',
     color: 'white',
-    padding: 8,
+    padding: 8
   },
+	headerMenuLinkText: {
+		textAlign: 'center',
+		width: '100%',
+		margin: '0px auto'
+	},
   content: {
     padding: '16px',
   },
+	fullWidth: {
+		width: '100%'
+	}
 };
 
 export default class Main extends Component {
@@ -61,10 +69,12 @@ export default class Main extends Component {
 		const sidebar = <SidebarContent />;
 
     const contentHeader = (
-      <span>
+      <span style={styles.fullWidth}>
         {!this.state.docked &&
-         <a onClick={this.toggleOpen.bind(this)} href="#" style={styles.contentHeaderMenuLink}>=</a>}
-        <span> Redadas de Obama</span>
+         <a onClick={this.toggleOpen.bind(this)} href="#" style={styles.contentHeaderMenuLink}>
+					 <i className="fa fa-bars"></i>
+         </a>}
+        <span style={styles.headerMenuLinkText}> Redadas de Obama</span>
       </span>);
 
     const sidebarProps = {
