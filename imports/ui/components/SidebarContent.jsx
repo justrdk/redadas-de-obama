@@ -12,6 +12,12 @@ const styles = {
     color: '#757575',
     textDecoration: 'none',
   },
+	sidebarLinkLogout: {
+    display: 'block',
+    padding: '16px 0px',
+    color: '#c8c8c8',
+    textDecoration: 'none',
+  },
   divider: {
     margin: '8px 0',
     height: 1,
@@ -44,11 +50,11 @@ const SidebarContent = (props) => {
         <a href="/" style={styles.sidebarLink}>Inicio</a>
         <a href="/reporta" style={styles.sidebarLink}>Reporta</a>
         <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
-				<a href="#" style={styles.sidebarLink}>Comparte</a>
+				<a href="/comparte" style={styles.sidebarLink}>Comparte</a>
 				<a href="/privacidad" style={styles.sidebarLink}>Privacidad</a>
 
 				<div style={styles.divider} />
-				<a href="/salir" style={styles.sidebarLink}>Salir</a>
+				<a id="logout" href="#" style={styles.sidebarLinkLogout}>Salir</a>
       </div>
     </MaterialTitlePanel>
   );
