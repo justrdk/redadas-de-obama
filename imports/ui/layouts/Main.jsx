@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import Snap from 'snapjs';
 import ReactDOM from 'react-dom';
+import Sidebar from 'react-sidebar';
 
-import SideBar from '../components/SideBar.jsx';
-import Tooltip from '../components/Tooltip.jsx';
-import Spotlight from '../components/Spotlight.jsx';
-import UserCardPopover from '../components/UserCardPopover.jsx';
-import FlexTabBar from '../components/FlexTabBar.jsx';
-import ConnectionStatus from '../components/ConnectionStatus.jsx';
+import MaterialTitlePanel from '../components/MaterialTitlePanel.jsx';
 
-var snapper = new Snap({
-	element: ReactDOM.findDOMNode(document.getElementById('content')),
-	addBodyClasses: true,
-	touchToDrag: false
-});
+
+const styles = {
+  contentHeaderMenuLink: {
+    textDecoration: 'none',
+    color: 'white',
+    padding: 8,
+  },
+  content: {
+    padding: '16px',
+  },
+};
 
 export default class Main extends Component {
 
@@ -21,41 +22,42 @@ export default class Main extends Component {
 	    super(props);
 
 	    this.state = {
-	      sideToggle: true,
+
 	    };
 	}
 
-	toggleSideNav(e){
-		e.preventDefault();
-		
-		if( snapper.state().state=="left" ){
-        snapper.close();
-    } else {
-        snapper.open('left');
-    }
+	getInitialState() {
+    return {sidebarOpen: false, sidebarDocked: false};
+  }
 
-	}
+  onSetSidebarOpen(open) {
+    this.setState({sidebarOpen: open});
+  }
+
+  componentWillMount() {
+    var mql = window.matchMedia(`(min-width: 800px)`);
+    mql.addListener(this.mediaQueryChanged.bind(this));
+    this.setState({mql: mql, sidebarDocked: mql.matches});
+  }
+
+  componentWillUnmount() {
+    this.state.mql.removeListener(this.mediaQueryChanged.bind(this));
+  }
+
+  mediaQueryChanged() {
+    this.setState({sidebarDocked: this.state.mql.matches});
+  }
 
   render() {
+		var sidebarContent = <b>Sidebar content</b>;
+
     return (
-			<div>
-				<div className="snap-drawers">
-					<div className="snap-drawer snap-drawer-left">
-						Left Drawer
-					</div>
-				</div>
-
-
-				<div id="content" className="snap-content">
-					<div id="toolbar">
-                <a href="#" id="open-left" onClick={this.toggleSideNav.bind(this)}>Nav</a>
-                <h1>Default</h1>
-          </div>
-
-					<div className="page-content">Content</div>
-					<div id="bottom-bar">Page Footer</div>
-				</div>
-			</div>
+      <Sidebar sidebar={sidebarContent}
+               open={this.state.sidebarOpen}
+               docked={this.state.sidebarDocked}
+               onSetOpen={this.onSetSidebarOpen}>
+        <b>Main content</b>
+      </Sidebar>
     );
   }
 }

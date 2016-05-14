@@ -21,6 +21,6 @@
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-mounter": "^1.2.0",
-    "snapjs": "^1.2.1"
+    "react-sidebar": "^2.1.1"
   }
 }
