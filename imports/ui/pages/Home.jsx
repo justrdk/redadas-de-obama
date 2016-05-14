@@ -6,10 +6,13 @@ export default class Home extends Component {
 		return (
 			<div>
 				<p>
-					A map of reported raids will go here.
+					<img src="http://placehold.it/800x500?text=Map" className="img-responsive" />
 				</p>
 				<p>
-					We will also have a social media feed.
+					<img src="http://placehold.it/800x900?text=Social+Media+Feed" className="img-responsive" />
+				</p>
+				<p>
+					<img src="http://placehold.it/800x200?text=Counter" className="img-responsive" />
 				</p>
 			</div>
 		)
