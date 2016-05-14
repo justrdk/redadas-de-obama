@@ -1,10 +1,27 @@
 {
   "name": "redadas-de-obama",
-  "private": true,
+  "version": "0.0.1",
+  "description": "A web app for crowdsourcing immigration raid info so undocumented people can avoid them.",
+  "main": "main.js",
   "scripts": {
-    "start": "meteor run"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosecha/redadas-de-obama.git"
+  },
+  "author": "Celso Mireles",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Cosecha/redadas-de-obama/issues"
+  },
+  "homepage": "https://github.com/Cosecha/redadas-de-obama#readme",
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-mounter": "^1.2.0",
+    "react-sidebar": "^2.1.1"
+
   }
 }
