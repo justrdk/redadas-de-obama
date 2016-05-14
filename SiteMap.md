@@ -31,6 +31,8 @@ We can use Meteor's accounts system. To make it simpler, we should only use Face
 
 Kudos if we can use Facebook Account Kit or Twilio Authy for passwordless login!
 
+![Entrar](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/wireframe/160513-rdo-wireframe-login.jpg)
+
 ## /reporta
 
 This is where people will be able to report a raid
@@ -40,6 +42,8 @@ Info to be collected:
 - Location (string)
 - Description (string)
 - Media (pictures or videos)
+
+![Reporta](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/wireframe/160513-rdo-wireframe-reporta.jpg)
 
 ## /redada/id
 
@@ -51,8 +55,12 @@ People will be able to click on each raid in the map and be led to this page tha
  - Description
  - Media
 
+![Redada](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/wireframe/160513-rdo-wireframe-redada.jpg)
+
 ## /alertas
 
 Here people will be able to enable/disable alerts for raids near them.
 
 If we haven't collected phone number info, we can collect that info + carrier (if we need that to make sending SMS's easier)
+
+![Alertas](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/wireframe/160513-rdo-wireframe-alertas.jpg)
