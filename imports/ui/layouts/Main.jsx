@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Sidebar from 'react-sidebar';
+import SidebarContent from '../components/SidebarContent';
 
 import MaterialTitlePanel from '../components/MaterialTitlePanel.jsx';
 
@@ -27,36 +28,69 @@ export default class Main extends Component {
 	}
 
 	getInitialState() {
-    return {sidebarOpen: false, sidebarDocked: false};
-  }
-
-  onSetSidebarOpen(open) {
-    this.setState({sidebarOpen: open});
+    return {docked: false, open: false};
   }
 
   componentWillMount() {
-    var mql = window.matchMedia(`(min-width: 800px)`);
+    const mql = window.matchMedia(`(min-width: 800px)`);
     mql.addListener(this.mediaQueryChanged.bind(this));
-    this.setState({mql: mql, sidebarDocked: mql.matches});
+    this.setState({mql: mql, docked: mql.matches});
   }
 
   componentWillUnmount() {
     this.state.mql.removeListener(this.mediaQueryChanged.bind(this));
   }
 
+  onSetOpen(open) {
+    this.setState({open: open});
+  }
+
   mediaQueryChanged() {
-    this.setState({sidebarDocked: this.state.mql.matches});
+    this.setState({docked: this.state.mql.matches});
+  }
+
+  toggleOpen(ev) {
+    this.setState({open: !this.state.open});
+
+    if (ev) {
+      ev.preventDefault();
+    }
   }
 
   render() {
-		var sidebarContent = <b>Sidebar content</b>;
+		const sidebar = <SidebarContent />;
+
+    const contentHeader = (
+      <span>
+        {!this.state.docked &&
+         <a onClick={this.toggleOpen} href="#" style={styles.contentHeaderMenuLink}>=</a>}
+        <span> Responsive React Sidebar</span>
+      </span>);
+
+    const sidebarProps = {
+      sidebar: sidebar,
+      docked: this.state.docked,
+      open: this.state.open,
+      onSetOpen: this.onSetOpen,
+    };
 
     return (
-      <Sidebar sidebar={sidebarContent}
-               open={this.state.sidebarOpen}
-               docked={this.state.sidebarDocked}
-               onSetOpen={this.onSetSidebarOpen}>
-        <b>Main content</b>
+      <Sidebar {...sidebarProps}>
+        <MaterialTitlePanel title={contentHeader}>
+          <div style={styles.content}>
+            <p>
+              This example will automatically dock the sidebar if the page
+              width is above 800px (which is currently {'' + this.state.docked}).
+            </p>
+            <p>
+              This functionality should live in the component that renders the sidebar.
+              This way you're able to modify the sidebar and main content based on the
+              responsiveness data. For example, the menu button in the header of the
+              content is now {this.state.docked ? 'hidden' : 'shown'} because the sidebar
+              is {!this.state.docked && 'not'} visible.
+            </p>
+          </div>
+        </MaterialTitlePanel>
       </Sidebar>
     );
   }
