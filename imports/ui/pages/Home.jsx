@@ -6,13 +6,10 @@ export default class Home extends Component {
 		return (
 			<div>
 				<p>
-					This example will automatically dock the sidebar if the page
-					width is above 800px.
+					A map of reported raids will go here.
 				</p>
 				<p>
-					This functionality should live in the component that renders the sidebar.
-					This way you're able to modify the sidebar and main content based on the
-					responsiveness data.
+					We will also have a social media feed.
 				</p>
 			</div>
 		)
