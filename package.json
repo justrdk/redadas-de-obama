@@ -15,12 +15,12 @@
   "bugs": {
     "url": "https://github.com/Cosecha/redadas-de-obama/issues"
   },
-  "homepage": "https://github.com/Cosecha/redadas-de-obama#readme"
-	,
-	"dependencies": {
+  "homepage": "https://github.com/Cosecha/redadas-de-obama#readme",
+  "dependencies": {
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-mounter": "^1.2.0"
+    "react-mounter": "^1.2.0",
+    "snapjs": "^1.2.1"
   }
 }
