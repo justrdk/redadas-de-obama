@@ -5,6 +5,8 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div>
+
+				
 				<p>
 					<img src="http://placehold.it/800x500?text=Map" className="img-responsive" />
 				</p>
