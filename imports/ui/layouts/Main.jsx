@@ -35,9 +35,9 @@ export default class Main extends Component {
 	    // };
 	}
 
-	getInitialState() {
-    return {docked: false, open: false};
-  }
+	// getInitialState() {
+  //   return {docked: false, open: false};
+  // }
 
   componentWillMount() {
     const mql = window.matchMedia(`(min-width: 800px)`);

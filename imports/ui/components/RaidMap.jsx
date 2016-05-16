@@ -5,11 +5,19 @@ import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 
 const coords = {
-  lat: 51.5258541,
-  lng: -0.08040660000006028
+  lat: 39.6630348,
+  lng: -98.9540999
 };
 
 export default class RaidMap extends Component {
+
+	constructor(props) {
+	    super(props);
+
+	    this.state = {
+	      markers: Raids.find().fetch()
+	    };
+	}
 
 	onMapCreated(map) {
 	    map.setOptions({
@@ -30,31 +38,35 @@ export default class RaidMap extends Component {
   }
 
 	render() {
+
+		var markers = [];
+
+		var raids = Raids.find().fetch().map(function(raid) {
+
+		});
+
 		return (
 			<Gmaps
-        width={'800px'}
-        height={'600px'}
+        width={'100%'}
+        height={'400px'}
         lat={coords.lat}
         lng={coords.lng}
-        zoom={12}
-        loadingMessage={'Be happy'}
-        params={{v: '3.exp'}}
+        zoom={4}
+        loadingMessage={'Resist.'}
+        params={{
+					v: '3.exp',
+					key: 'AIzaSyAME4t3G4A-annYQdxTHTMYjBw8ZURl5xA'
+				}}
         onMapCreated={this.onMapCreated}>
+
+				{this.state.markers.map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} />)}
+
         <Marker
           lat={coords.lat}
           lng={coords.lng}
-          draggable={true}
+          draggable={false}
           onDragEnd={this.onDragEnd} />
-        <InfoWindow
-          lat={coords.lat}
-          lng={coords.lng}
-          content={'Hello, React :)'}
-          onCloseClick={this.onCloseClick} />
-        <Circle
-          lat={coords.lat}
-          lng={coords.lng}
-          radius={500}
-          onClick={this.onClick} />
+
       </Gmaps>
 		)
 	}
