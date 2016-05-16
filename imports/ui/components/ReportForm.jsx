@@ -22,9 +22,13 @@ export default class ReportForm extends TrackerReact(Component) {
 	insertRaid(e) {
 		e.preventDefault();
 
-		ReactDOM.render(<LogInButtons />, document.getElementById('login'));
+
 
 		console.log("Form submitted");
+	}
+
+	componentDidMount() {
+		ReactDOM.render(<LogInButtons />, document.getElementById('login'));
 	}
 
 
