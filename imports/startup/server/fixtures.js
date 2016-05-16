@@ -1,5 +1,7 @@
 if( Raids.find().count() === 0 ) {
 
+	console.log(Raids.find().count());
+
 	Raids.insert( {
 		zip: '85004',
 		description: 'Checkpoint on the I-10 exit on 7th Ave.',

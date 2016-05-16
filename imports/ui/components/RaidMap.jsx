@@ -9,6 +9,8 @@ const coords = {
   lng: -98.9540999
 };
 
+//const Raids = Meteor.subscribe('raids.public');
+
 export default class RaidMap extends Component {
 
 	constructor(props) {
@@ -39,12 +41,6 @@ export default class RaidMap extends Component {
 
 	render() {
 
-		var markers = [];
-
-		var raids = Raids.find().fetch().map(function(raid) {
-
-		});
-
 		return (
 			<Gmaps
         width={'100%'}
@@ -59,13 +55,8 @@ export default class RaidMap extends Component {
 				}}
         onMapCreated={this.onMapCreated}>
 
-				{this.state.markers.map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} />)}
+				{this.state.markers.map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid.id} />)}
 
-        <Marker
-          lat={coords.lat}
-          lng={coords.lng}
-          draggable={false}
-          onDragEnd={this.onDragEnd} />
 
       </Gmaps>
 		)
