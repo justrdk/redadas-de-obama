@@ -50,8 +50,6 @@ export default class RaidMap extends TrackerReact(Component) {
 
 	render() {
 
-		console.log(this.raids());
-
 		return (
 			<Gmaps
         width={'100%'}

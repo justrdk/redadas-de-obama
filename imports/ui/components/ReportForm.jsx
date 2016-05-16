@@ -22,19 +22,27 @@ export default class ReportForm extends TrackerReact(Component) {
 	insertRaid(e) {
 		e.preventDefault();
 
+		ReactDOM.render(<LogInButtons />, document.getElementById('login'));
+
 		console.log("Form submitted");
 	}
 
 
 	render() {
 
-		return (
-			<form onSubmit={this.insertRaid}>
-				<input type="text" placeholder="Describe the raid" />
-				<input type="text" placeholder="Zip Code" />
 
-				<input type="submit" className="report-submit" />
-			</form>
+
+		return (
+			<div>
+				<form onSubmit={this.insertRaid}>
+					<input type="text" placeholder="Describe the raid" />
+					<input type="text" placeholder="Zip Code" />
+
+					<input type="submit" className="report-submit" />
+				</form>
+
+				<div id="login" className="alt-accounts-log-in-buttons"></div>
+			</div>
 		)
 	}
 }

@@ -10,7 +10,7 @@ export default class Home extends Component {
 
 				<RaidMap />
 				<ReportForm />
-				
+
 				<p>
 					<img src="http://placehold.it/800x900?text=Social+Media+Feed" className="img-responsive" />
 				</p>
