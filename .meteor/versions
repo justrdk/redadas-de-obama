@@ -68,6 +68,7 @@ templating@1.1.9
 templating-tools@1.0.4
 tracker@1.0.13
 ui@1.0.11
+ultimatejs:tracker-react@1.0.4
 underscore@1.0.8
 url@1.0.9
 webapp@1.2.8

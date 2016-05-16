@@ -3,6 +3,7 @@ import {mount} from 'react-mounter';
 
 import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 const coords = {
   lat: 39.6630348,
@@ -11,7 +12,7 @@ const coords = {
 
 //const Raids = Meteor.subscribe('raids.public');
 
-export default class RaidMap extends Component {
+export default class RaidMap extends TrackerReact(Component) {
 
 	constructor(props) {
 	    super(props);
@@ -21,10 +22,18 @@ export default class RaidMap extends Component {
 	    };
 	}
 
+	raids() {
+		return Raids.find().fetch();
+	}
+
 	onMapCreated(map) {
 	    map.setOptions({
 	      disableDefaultUI: true
 	    });
+
+			this.setState = {
+	      markers: Raids.find().fetch()
+	    };
 	  }
 
   onDragEnd(e) {
@@ -41,6 +50,8 @@ export default class RaidMap extends Component {
 
 	render() {
 
+		console.log(this.raids());
+
 		return (
 			<Gmaps
         width={'100%'}
@@ -55,7 +66,9 @@ export default class RaidMap extends Component {
 				}}
         onMapCreated={this.onMapCreated}>
 
-				{this.state.markers.map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid.id} />)}
+					{this.raids().map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid.id} />)}
+
+		
 
 
       </Gmaps>
