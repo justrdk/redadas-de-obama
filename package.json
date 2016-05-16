@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/Cosecha/redadas-de-obama#readme",
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0",
+    "meteor-node-stubs": "^0.2.3",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-gmaps": "^1.5.0",
     "react-mounter": "^1.2.0",
     "react-sidebar": "^2.1.1"
-
   }
 }

@@ -22,3 +22,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 
 kadira:flow-router
 fortawesome:fontawesome
+aldeed:simple-schema
+ultimatejs:tracker-react
