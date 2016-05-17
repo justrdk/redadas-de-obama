@@ -24,7 +24,4 @@ kadira:flow-router
 fortawesome:fontawesome
 aldeed:simple-schema
 ultimatejs:tracker-react
-accounts-password
-accounts-ui
 http
-alt:react-accounts-ui

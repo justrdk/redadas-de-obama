@@ -7,6 +7,7 @@ import Reporta from '../imports/ui/pages/Reporta.jsx';
 import Alertas from '../imports/ui/pages/Alertas.jsx';
 import Comparte from '../imports/ui/pages/Comparte.jsx';
 import Privacidad from '../imports/ui/pages/Privacidad.jsx';
+import Login from '../imports/ui/pages/Login.jsx';
 
 import Main from '../imports/ui/layouts/Main.jsx';
 
@@ -37,5 +38,11 @@ FlowRouter.route("/comparte", {
 FlowRouter.route("/privacidad", {
     action() {
         mount(Main, {yield: <Privacidad/>});
+    }
+});
+
+FlowRouter.route("/login", {
+    action() {
+        mount(Main, {yield: <Login />});
     }
 });
