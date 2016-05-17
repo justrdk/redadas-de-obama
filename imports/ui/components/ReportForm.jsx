@@ -22,6 +22,18 @@ export default class ReportForm extends TrackerReact(Component) {
 	insertRaid(e) {
 		e.preventDefault();
 
+		var geocoder = new google.maps.Geocoder();
+    var address = document.getElementById("txtAddress").value;
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+            alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+        } else {
+            alert("Request failed.")
+        }
+    });
+
 
 
 		console.log("Form submitted");
@@ -39,8 +51,8 @@ export default class ReportForm extends TrackerReact(Component) {
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
-					<input type="text" placeholder="Describe the raid" />
-					<input type="text" placeholder="Zip Code" />
+					<input id="txtDescription" type="text" placeholder="Describe the raid" />
+					<input id="txtAddress" type="text" placeholder="Zip Code" />
 
 					<input type="submit" className="report-submit" />
 				</form>
