@@ -22,30 +22,45 @@ export default class ReportForm extends TrackerReact(Component) {
 	insertRaid(e) {
 		e.preventDefault();
 
+		var geocoder = new google.maps.Geocoder();
+    var address = document.getElementById("txtAddress").value;
+		var description = document.getElementById("txtDescription").value;
+
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
 
 
-		console.log("Form submitted");
+						Raids.insert({
+							address: address,
+							description: description,
+							createdOn: new Date(),
+							geoLocation: {
+								lat: latitude,
+								lng: longitude
+							},
+							media: []
+						});
+
+        } else {
+            alert("Request failed.")
+        }
+    });
+
 	}
-
-	componentDidMount() {
-		ReactDOM.render(<LogInButtons />, document.getElementById('login'));
-	}
-
 
 	render() {
-
-
-
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
-					<input type="text" placeholder="Describe the raid" />
-					<input type="text" placeholder="Zip Code" />
+					<input id="txtDescription" type="text" placeholder="Describe the raid" />
+					<input id="txtAddress" type="text" placeholder="Zip Code" />
 
 					<input type="submit" className="report-submit" />
 				</form>
 
-				<div id="login" className="alt-accounts-log-in-buttons"></div>
+
 			</div>
 		)
 	}
