@@ -29,11 +29,39 @@ People can take on an issue, work on it, and submit a pull request when ready.
 
 We will also be experimenting with [ZenHub](https://www.zenhub.com/) for worklow, so be sure to install that browser plugin to see the cool extra interfaces ZenHub provides.
 
+
 ## Contributor Covenant
 
 The maintainer of this project is committed to making sure this project provides a safe space for people of all genders, races, and levels of programmer proficiency. Everyone has something valuable to contribute.
 
 We will also enforce our [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md) should you engage in behaviors not in line with the project's, and Movimiento Cosecha's values.
+
+## Running the Web App on your machine
+
+You need to have the following installed:
+
+- [Node](https://nodejs.org)
+- [Meteor.js Framework](http://meteor.com)
+
+Once you have that installed, run the following in your terminal:
+
+`git clone https://github.com/Cosecha/redadas-de-obama.git`
+
+Then move into that directory:
+
+`cd redadas-de-obama`
+
+Now to make sure you have all you NPM dependencies (you may need to use `sudo` before):
+
+`npm init`
+
+Now to start the meteor app:
+
+`meteor`
+
+You should now be able to visit the app running on your computer at `http://localhost:3000`:
+
+![Running](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-05-16%20at%2010.26.48%20PM.png)
 
 ## Not a Developer, How Can I Contribute?
 
