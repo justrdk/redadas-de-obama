@@ -48,6 +48,10 @@ export default class ReportForm extends TrackerReact(Component) {
         }
     });
 
+		// Clear values
+		document.getElementById("txtAddress").value = '';
+		document.getElementById("txtDescription").value = '';
+
 	}
 
 	render() {
