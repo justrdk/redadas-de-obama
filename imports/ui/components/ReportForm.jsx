@@ -24,30 +24,33 @@ export default class ReportForm extends TrackerReact(Component) {
 
 		var geocoder = new google.maps.Geocoder();
     var address = document.getElementById("txtAddress").value;
+		var description = document.getElementById("txtDescription").value;
+
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             var latitude = results[0].geometry.location.lat();
             var longitude = results[0].geometry.location.lng();
-            alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+
+
+						Raids.insert({
+							address: address,
+							description: description,
+							createdOn: new Date(),
+							geoLocation: {
+								lat: latitude,
+								lng: longitude
+							},
+							media: []
+						});
+
         } else {
             alert("Request failed.")
         }
     });
 
-
-
-		console.log("Form submitted");
 	}
-
-	componentDidMount() {
-		ReactDOM.render(<LogInButtons />, document.getElementById('login'));
-	}
-
 
 	render() {
-
-
-
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
@@ -57,7 +60,7 @@ export default class ReportForm extends TrackerReact(Component) {
 					<input type="submit" className="report-submit" />
 				</form>
 
-				<div id="login" className="alt-accounts-log-in-buttons"></div>
+
 			</div>
 		)
 	}

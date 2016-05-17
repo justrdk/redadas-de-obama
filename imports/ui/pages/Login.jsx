@@ -32,25 +32,16 @@ export default class Login extends TrackerReact(Component) {
 
 	}
 
+	componentDidMount() {
+		ReactDOM.render(<LogInButtonsDialog />, document.getElementById('login'));
+	}
+
 	render() {
 
 		return (
-			<div>
-				<form onSubmit={this.handleLogin}>
-					<input type="text" placeholder="Area Code" name="areacode" className="areacode" />
-					<input type="text" placeholder="Phone Number" name="phonenumber" className="phonenumber" />
 
-					<input type="submit" className="report-submit" />
-				</form>
+				<div id="login" className="alt-accounts-log-in-buttons"></div>
 
-				<br />
-
-
-
-				<div id="login-message">
-
-				</div>
-			</div>
 		)
 	}
 }
