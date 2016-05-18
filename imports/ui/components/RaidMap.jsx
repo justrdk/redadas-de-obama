@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {mount} from 'react-mounter';
-
 import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
@@ -64,7 +63,7 @@ export default class RaidMap extends TrackerReact(Component) {
 				}}
         onMapCreated={this.onMapCreated}>
 
-					{this.raids().map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid.id} />)}
+					{this.raids().map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid._id} />)}
 
       </Gmaps>
 		)
