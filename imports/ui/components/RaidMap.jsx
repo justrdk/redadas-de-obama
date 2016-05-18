@@ -66,7 +66,7 @@ export default class RaidMap extends TrackerReact(Component) {
 				}}
         onMapCreated={this.onMapCreated}>
 
-					{this.raids().map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid._id} />)}
+					{this.raids().map((raid) => <Marker lat={raid.geoLocation.lat} lng={raid.geoLocation.lng} draggable={false} key={raid._id} animation={google.maps.Animation.DROP} />)}
 
       </Gmaps>
 		)
