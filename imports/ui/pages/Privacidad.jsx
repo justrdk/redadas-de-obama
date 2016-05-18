@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {mount} from 'react-mounter';
 
+
 export default class Privacidad extends Component {
 	render() {
 		return (

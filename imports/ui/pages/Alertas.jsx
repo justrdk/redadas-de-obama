@@ -8,7 +8,7 @@ export default class Alertas extends Component {
 				<h2>
 					Alertas
 				</h2>
-				
+
 			</div>
 		)
 	}
