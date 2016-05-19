@@ -7,21 +7,23 @@ import AlertOptions from '../components/AlertOptions.jsx';
 
 export default class Alertas extends TrackerReact(Component) {
 
+	constructor(props) {
+	    super(props);
+
+	    this.state = {
+				subscription: {
+
+				}
+	    };
+	}
+
 	componentDidMount() {
-		ReactDOM.render(<LogInButtonsDialog />, document.getElementById('login'));
+		//ReactDOM.render(<LogInButtonsDialog />, document.getElementById('login'));
 	}
 
 	componentWillUnmount() {
 
   }
-
-	isUser() {
-		if ( Meteor.user() ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 
 	render() {
 		return (
@@ -30,9 +32,7 @@ export default class Alertas extends TrackerReact(Component) {
 					Alertas
 				</h2>
 
-				<div id="login" className="alt-accounts-log-in-buttons"></div>
-
-				{this.isUser() && <AlertOptions />}
+				<AlertOptions />
 
 			</div>
 		)

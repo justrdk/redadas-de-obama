@@ -21,11 +21,20 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 
 kadira:flow-router
-
+#kadira:blaze-layout
 fortawesome:fontawesome
 aldeed:simple-schema
 ultimatejs:tracker-react
-accounts-password
-accounts-ui
+#useraccounts:core
+#accounts-password
+#accounts-ui-unstyled
+#useraccounts:materialize
+#useraccounts:flow-routing
 http
-alt:react-accounts-ui
+#alt:react-accounts-ui
+check
+session
+email
+#softwarerero:accounts-t9n
+#service-configuration
+#arillo:flow-router-helpers
