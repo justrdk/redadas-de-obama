@@ -53,8 +53,8 @@ export default class ReportForm extends TrackerReact(Component) {
     });
 
 		// Clear values
-		document.getElementById("txtAddress").value = '';
-		document.getElementById("txtDescription").value = '';
+		document.getElementById("txtAddress").value = 'Direccion o Codigo Postal';
+		document.getElementById("txtDescription").value = 'Describe la redada';
 
 	}
 
