@@ -7,7 +7,7 @@
 meteor-base             # Packages every Meteor app needs to have
 mobile-experience       # Packages for a great mobile UX
 mongo                   # The database Meteor supports right now
-#blaze-html-templates    # Compile .html files into Meteor Blaze views
+blaze-html-templates    # Compile .html files into Meteor Blaze views
 reactive-var            # Reactive variable for tracker
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
@@ -21,11 +21,20 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 
 kadira:flow-router
-
+kadira:blaze-layout
 fortawesome:fontawesome
 aldeed:simple-schema
 ultimatejs:tracker-react
+useraccounts:core
 accounts-password
-accounts-ui
+accounts-ui-unstyled
+useraccounts:materialize
+useraccounts:flow-routing
 http
 alt:react-accounts-ui
+check
+session
+email
+softwarerero:accounts-t9n
+service-configuration
+arillo:flow-router-helpers

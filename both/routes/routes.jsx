@@ -1,5 +1,6 @@
 import React from 'react';
 import {mount} from 'react-mounter';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 //import Authy from 'authy';
 // Import Pages
 import Home from '../../imports/ui/pages/Home.jsx';

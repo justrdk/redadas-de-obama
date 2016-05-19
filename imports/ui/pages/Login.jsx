@@ -12,7 +12,7 @@ const style = {
 };
 //const Raids = Meteor.subscribe('raids.public');
 
-export default class Login extends TrackerReact(Component) {
+export default class Login extends TrackerReact(React.Component) {
 
 	constructor(props) {
 	    super(props);
@@ -37,8 +37,9 @@ export default class Login extends TrackerReact(Component) {
 				console.log(err);
 			} else {
 				console.log(res);
+				
 			}
-		})
+		});
 
 	}
 
