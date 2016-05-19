@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Raids} from '../../api/raids/raids.js';
 
 const style = {
   margin: 12,
 };
+
+
 
 export default class ReportForm extends TrackerReact(Component) {
 

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {mount} from 'react-mounter';
 import ReactDOM from 'react-dom';
+import { Mongo } from 'meteor/mongo';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
+import {Raids} from '../../api/raids/raids.js';
 
 const coords = {
   lat: 39.6630348,
@@ -11,6 +13,7 @@ const coords = {
 };
 
 //const Raids = Meteor.subscribe('raids.public');
+//export const Raids = new Mongo.Collection( 'raids' );
 
 export default class RaidMap extends TrackerReact(React.Component) {
 
@@ -19,7 +22,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
 
 	    this.state = {
 				subscription: {
-					raidsData: Meteor.subscribe('raids.public')
+					raidsData: Meteor.subscribe('raids')
 				}
 	    };
 	}
