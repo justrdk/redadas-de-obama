@@ -4,7 +4,18 @@ import ReactDOM from 'react-dom';
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
-import Toggle from 'react-toggle';
+import Toggle from 'material-ui/Toggle';
+import TextField from 'material-ui/TextField';
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  toggle: {
+    marginBottom: 16,
+  },
+};
+
 
 export default class AlertOptions extends TrackerReact(Component) {
 
@@ -17,19 +28,24 @@ export default class AlertOptions extends TrackerReact(Component) {
 	}
 
 	handleAlertChange() {
-		this.state.alertStatus = !this.state.alertStatus;
-		console.log(this.state.alertStatus);
+
+		console.log('toggled');
 	}
 
 	render() {
 		return (
 			<div>
-				<label htmlFor="cheese-status">Recibir Alertas</label>
 
 				<Toggle
+					label="Recibe alertas de redadas"
+					labelPosition="right"
+					style={styles.toggle}
 				  id="alert-status"
-				  defaultChecked={this.state.alertStatus}
-				  onChange={this.handleAlertChange} />
+				  defaultToggled={false}
+				  onToggle={this.handleAlertChange} />
+
+				<TextField hintText="Tu numero celular" id="cel-number" />
+
 
 			</div>
 		)

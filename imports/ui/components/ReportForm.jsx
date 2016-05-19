@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import {mount} from 'react-mounter';
 import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
+const style = {
+  margin: 12,
+};
 
 export default class ReportForm extends TrackerReact(Component) {
 
@@ -57,10 +62,10 @@ export default class ReportForm extends TrackerReact(Component) {
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
-					<input id="txtDescription" type="text" placeholder="Describe la redada" />
-					<input id="txtAddress" type="text" placeholder="Direccion o Codigo Postal" />
+					<TextField hintText="Describe la redada" id="txtDescription" />
+					<TextField hintText="Direccion o Codigo Postal" id="txtAddress" />
 
-					<input type="submit" className="report-submit" />
+					<RaisedButton type="submit" className="report-submit" label="Reporta" primary={true} style={style} />
 				</form>
 
 

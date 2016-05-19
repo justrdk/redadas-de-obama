@@ -12,12 +12,7 @@ export default class Home extends Component {
 				<RaidMap />
 				<ReportForm />
 
-				<p>
-					<img src="http://placehold.it/800x900?text=Social+Media+Feed" className="img-responsive" />
-				</p>
-				<p>
-					<img src="http://placehold.it/800x200?text=Counter" className="img-responsive" />
-				</p>
+				
 			</div>
 		)
 	}
