@@ -12,7 +12,7 @@ const coords = {
 
 //const Raids = Meteor.subscribe('raids.public');
 
-export default class RaidMap extends TrackerReact(Component) {
+export default class RaidMap extends TrackerReact(React.Component) {
 
 	constructor(props) {
 	    super(props);

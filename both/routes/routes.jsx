@@ -27,7 +27,9 @@ FlowRouter.route("/reporta", {
 });
 
 FlowRouter.route("/alertas", {
-    action() {
+		name: 'alertas',
+		triggersEnter: [AccountsTemplates.ensureSignedIn],
+    action: function(params, queryParams) {
         mount(Main, {yield: <Alertas/>});
     }
 });
@@ -44,8 +46,16 @@ FlowRouter.route("/privacidad", {
     }
 });
 
-FlowRouter.route("/login", {
+FlowRouter.route("/sign-in", {
     action() {
         mount(Main, {yield: <Login />});
     }
 });
+
+//Routes
+AccountsTemplates.configureRoute('changePwd');
+AccountsTemplates.configureRoute('forgotPwd');
+AccountsTemplates.configureRoute('resetPwd');
+AccountsTemplates.configureRoute('signIn');
+AccountsTemplates.configureRoute('signUp');
+AccountsTemplates.configureRoute('verifyEmail');
