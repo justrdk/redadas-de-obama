@@ -57,8 +57,8 @@ export default class ReportForm extends TrackerReact(Component) {
 		return (
 			<div>
 				<form onSubmit={this.insertRaid}>
-					<input id="txtDescription" type="text" placeholder="Describe the raid" />
-					<input id="txtAddress" type="text" placeholder="Zip Code" />
+					<input id="txtDescription" type="text" placeholder="Describe la redada" />
+					<input id="txtAddress" type="text" placeholder="Direccion o Codigo Postal" />
 
 					<input type="submit" className="report-submit" />
 				</form>
