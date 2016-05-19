@@ -13,7 +13,7 @@ import Login from '../../ui/pages/Login.jsx';
 
 import Main from '../../ui/layouts/Main.jsx';
 
-const publicRoutes = FlowRouter.group( { name: 'public' } );
+//const publicRoutes = FlowRouter.group( { name: 'public' } );
 
 FlowRouter.route("/", {
 		name: 'home',
@@ -58,6 +58,6 @@ FlowRouter.route("/sign-in", {
 //AccountsTemplates.configureRoute('changePwd');
 //AccountsTemplates.configureRoute('forgotPwd');
 //AccountsTemplates.configureRoute('resetPwd');
-AccountsTemplates.configureRoute('signIn');
-AccountsTemplates.configureRoute('signUp');
-AccountsTemplates.configureRoute('verifyEmail');
+// AccountsTemplates.configureRoute('signIn');
+// AccountsTemplates.configureRoute('signUp');
+// AccountsTemplates.configureRoute('verifyEmail');
