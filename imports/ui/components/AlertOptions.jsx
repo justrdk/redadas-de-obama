@@ -6,6 +6,8 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
 import Toggle from 'react-toggle';
 
+
+
 export default class AlertOptions extends TrackerReact(Component) {
 
 	constructor(props) {
