@@ -23,6 +23,7 @@ FlowRouter.route("/", {
 });
 
 FlowRouter.route("/reporta", {
+		name: 'reporta',
     action() {
         mount(Main, {yield: <Reporta/>});
     }
@@ -37,18 +38,21 @@ FlowRouter.route("/alertas", {
 });
 
 FlowRouter.route("/comparte", {
+		name: 'comparte',
     action() {
         mount(Main, {yield: <Comparte/>});
     }
 });
 
 FlowRouter.route("/privacidad", {
+		name: 'privacidad',
     action() {
         mount(Main, {yield: <Privacidad/>});
     }
 });
 
 FlowRouter.route("/sign-in", {
+		name: 'login',
     action() {
         mount(Main, {yield: <Login />});
     }
