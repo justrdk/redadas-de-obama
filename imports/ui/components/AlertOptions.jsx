@@ -23,13 +23,20 @@ export default class AlertOptions extends TrackerReact(Component) {
 	    super(props);
 
 	    this.state = {
-				alertStatus: false
+				alertStatus: false,
+				subscription:{
+
+				}
 	    };
 	}
 
 	handleAlertChange() {
 
 		console.log('toggled');
+	}
+
+	componentWillUnmount() {
+
 	}
 
 	render() {

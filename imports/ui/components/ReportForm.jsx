@@ -15,7 +15,9 @@ export default class ReportForm extends TrackerReact(Component) {
 	    super(props);
 
 	    this.state = {
-
+				subscription: {
+					raids: Meteor.subscribe('raids')
+				}
 	    };
 	}
 
@@ -55,6 +57,10 @@ export default class ReportForm extends TrackerReact(Component) {
 		// Clear values
 		document.getElementById("txtAddress").value = 'Direccion o Codigo Postal';
 		document.getElementById("txtDescription").value = 'Describe la redada';
+
+	}
+
+	componentWillUnmount() {
 
 	}
 

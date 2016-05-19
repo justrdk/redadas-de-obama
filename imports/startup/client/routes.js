@@ -1,16 +1,17 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
-//import Authy from 'authy';
-// Import Pages
-import Home from '../../imports/ui/pages/Home.jsx';
-import Reporta from '../../imports/ui/pages/Reporta.jsx';
-import Alertas from '../../imports/ui/pages/Alertas.jsx';
-import Comparte from '../../imports/ui/pages/Comparte.jsx';
-import Privacidad from '../../imports/ui/pages/Privacidad.jsx';
-import Login from '../../imports/ui/pages/Login.jsx';
+//import FlowRouter from 'meteor/kadira:flow-router';
 
-import Main from '../../imports/ui/layouts/Main.jsx';
+// Import Pages
+import Home from '../../ui/pages/Home.jsx';
+import Reporta from '../../ui/pages/Reporta.jsx';
+import Alertas from '../../ui/pages/Alertas.jsx';
+import Comparte from '../../ui/pages/Comparte.jsx';
+import Privacidad from '../../ui/pages/Privacidad.jsx';
+import Login from '../../ui/pages/Login.jsx';
+
+import Main from '../../ui/layouts/Main.jsx';
 
 const publicRoutes = FlowRouter.group( { name: 'public' } );
 
@@ -29,7 +30,7 @@ FlowRouter.route("/reporta", {
 
 FlowRouter.route("/alertas", {
 		name: 'alertas',
-		triggersEnter: [AccountsTemplates.ensureSignedIn],
+		//triggersEnter: [AccountsTemplates.ensureSignedIn],
     action: function(params, queryParams) {
         mount(Main, {yield: <Alertas/>});
     }
@@ -54,9 +55,9 @@ FlowRouter.route("/sign-in", {
 });
 
 //Routes
-AccountsTemplates.configureRoute('changePwd');
-AccountsTemplates.configureRoute('forgotPwd');
-AccountsTemplates.configureRoute('resetPwd');
+//AccountsTemplates.configureRoute('changePwd');
+//AccountsTemplates.configureRoute('forgotPwd');
+//AccountsTemplates.configureRoute('resetPwd');
 AccountsTemplates.configureRoute('signIn');
 AccountsTemplates.configureRoute('signUp');
 AccountsTemplates.configureRoute('verifyEmail');

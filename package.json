@@ -25,6 +25,7 @@
     "react-dom": "^15.0.2",
     "react-gmaps": "^1.5.0",
     "react-mounter": "^1.2.0",
+    "react-redux": "^4.4.5",
     "react-sidebar": "^2.1.1",
     "react-tap-event-plugin": "^1.0.0",
     "twilio": "^2.9.1"

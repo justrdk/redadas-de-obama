@@ -7,6 +7,16 @@ import AlertOptions from '../components/AlertOptions.jsx';
 
 export default class Alertas extends TrackerReact(Component) {
 
+	constructor(props) {
+	    super(props);
+
+	    this.state = {
+				subscription: {
+
+				}
+	    };
+	}
+
 	componentDidMount() {
 		//ReactDOM.render(<LogInButtonsDialog />, document.getElementById('login'));
 	}
@@ -15,16 +25,12 @@ export default class Alertas extends TrackerReact(Component) {
 
   }
 
-
-
 	render() {
 		return (
 			<div>
 				<h2>
 					Alertas
 				</h2>
-
-
 
 				<AlertOptions />
 
