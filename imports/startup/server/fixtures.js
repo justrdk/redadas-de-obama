@@ -1,4 +1,4 @@
-if( Raids.find().count() === 0 ) {
+if( false ) {
 
 	console.log(Raids.find().count());
 
