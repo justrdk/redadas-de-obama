@@ -50,8 +50,7 @@ const SidebarContent = (props) => {
         <a href="/" style={styles.sidebarLink}>Inicio</a>
         <a href="/reporta" style={styles.sidebarLink}>Reporta</a>
         <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
-				<a href="/comparte" style={styles.sidebarLink}>Comparte</a>
-				<a href="/privacidad" style={styles.sidebarLink}>Privacidad</a>
+
 
 				<div style={styles.divider} />
 				<a id="logout" href="#" style={styles.sidebarLinkLogout}>Salir</a>
