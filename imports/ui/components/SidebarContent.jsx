@@ -48,7 +48,6 @@ const SidebarContent = (props) => {
     <MaterialTitlePanel title="Menu" style={style}>
       <div style={styles.content}>
         <a href="/" style={styles.sidebarLink}>Inicio</a>
-        <a href="/reporta" style={styles.sidebarLink}>Reporta</a>
         <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
 
 
