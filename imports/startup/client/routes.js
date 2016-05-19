@@ -30,7 +30,7 @@ FlowRouter.route("/reporta", {
 
 FlowRouter.route("/alertas", {
 		name: 'alertas',
-		//triggersEnter: [AccountsTemplates.ensureSignedIn],
+		triggersEnter: [AccountsTemplates.ensureSignedIn],
     action: function(params, queryParams) {
         mount(Main, {yield: <Alertas/>});
     }
