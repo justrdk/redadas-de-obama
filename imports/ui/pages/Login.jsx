@@ -37,7 +37,7 @@ export default class Login extends TrackerReact(React.Component) {
 				console.log(err);
 			} else {
 				console.log(res);
-				
+
 			}
 		});
 
