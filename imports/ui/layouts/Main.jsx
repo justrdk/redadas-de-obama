@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Sidebar from 'react-sidebar';
 import SidebarContent from '../components/SidebarContent';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import MaterialTitlePanel from '../components/MaterialTitlePanel.jsx';
 
@@ -85,14 +87,17 @@ export default class Main extends Component {
     };
 
     return (
-      <Sidebar {...sidebarProps}>
-        <MaterialTitlePanel title={contentHeader}>
-          <div style={styles.content}>
-						{this.props.yield}
+			<MuiThemeProvider muiTheme={getMuiTheme()}>
+				<Sidebar {...sidebarProps}>
+	        <MaterialTitlePanel title={contentHeader}>
+	          <div style={styles.content}>
+							{this.props.yield}
 
-          </div>
-        </MaterialTitlePanel>
-      </Sidebar>
+	          </div>
+	        </MaterialTitlePanel>
+	      </Sidebar>
+		  </MuiThemeProvider>
+
     );
   }
 }
