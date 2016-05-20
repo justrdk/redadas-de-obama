@@ -23,7 +23,6 @@ export default class Home extends TrackerReact(Component) {
   }
 
 	render() {
-		console.log('Meteor.user(): ' + Meteor.user());
 
 		return (
 			<div>

@@ -54,14 +54,14 @@ export default class ReportForm extends TrackerReact(Component) {
 
 						Meteor.call('addRaid', raidData, (err, data)=> {
 							if (!err) {
-								console.log('Submission was a success: ' + data);
+								// console.log('Submission was a success: ' + data);
 							} else {
-								console.log('Submission failed: ' + err);
+								// console.log('Submission failed: ' + err);
 							}
 						});
 
         } else {
-            alert("Request failed.")
+            alert("Request failed. Could not GeoCode the location based on your input. Try submitting a Zip Code");
         }
     });
 
