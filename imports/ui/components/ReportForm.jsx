@@ -40,8 +40,7 @@ export default class ReportForm extends TrackerReact(Component) {
             var latitude = results[0].geometry.location.lat();
             var longitude = results[0].geometry.location.lng();
 
-
-						Raids.insert({
+						var raidData = {
 							address: address,
 							description: description,
 							createdOn: new Date(),
@@ -50,7 +49,30 @@ export default class ReportForm extends TrackerReact(Component) {
 								lng: longitude
 							},
 							media: []
+						};
+
+						console.log('Raid data: ' + raidData);
+
+						Meteor.call('addRaid', raidData, (err, data)=> {
+							if (!err) {
+								console.log('Submission was a success: ' + data);
+							} else {
+								console.log('Submission failed: ' + err);
+							}
 						});
+
+						// Raids.insert({
+						// 	address: address,
+						// 	description: description,
+						// 	createdOn: new Date(),
+						// 	geoLocation: {
+						// 		lat: latitude,
+						// 		lng: longitude
+						// 	},
+						// 	media: []
+						// });
+
+
 
         } else {
             alert("Request failed.")
