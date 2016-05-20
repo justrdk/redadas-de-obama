@@ -6,9 +6,14 @@ if(Meteor.isServer){
 	});
 
 	Meteor.publish(null, function() {
-  return Meteor.users.find({_id: this.userId}, {fields: {
-		'profile.getsAlerts': 1
-	}});
+		if (this.userId ) {
+			return Meteor.users.find({_id: this.userId}, {fields: {
+				getsAlerts: 1
+			}});
+		} else {
+			return null;
+		}
+
 });
 
 }
