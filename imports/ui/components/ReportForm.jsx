@@ -19,7 +19,7 @@ export default class ReportForm extends TrackerReact(Component) {
 
 	    this.state = {
 				subscription: {
-					raids: Meteor.subscribe('raids')
+					raids: Meteor.subscribe('allRaids')
 				}
 	    };
 	}
@@ -71,7 +71,7 @@ export default class ReportForm extends TrackerReact(Component) {
 	}
 
 	componentWillUnmount() {
-
+		this.state.subscription.raids.stop();
 	}
 
 	render() {

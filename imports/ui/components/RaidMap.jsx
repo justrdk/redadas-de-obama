@@ -12,9 +12,6 @@ const coords = {
   lng: -98.9540999
 };
 
-//const Raids = Meteor.subscribe('raids.public');
-//export const Raids = new Mongo.Collection( 'raids' );
-
 export default class RaidMap extends TrackerReact(React.Component) {
 
 	constructor(props) {
@@ -22,7 +19,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
 
 	    this.state = {
 				subscription: {
-					raidsData: Meteor.subscribe('raids')
+					raids: Meteor.subscribe('allRaids')
 				}
 	    };
 	}
@@ -38,7 +35,7 @@ export default class RaidMap extends TrackerReact(React.Component) {
 	}
 
 	componentWillUnmount() {
-        this.state.subscription.raidsData.stop();
+        this.state.subscription.raids.stop();
     }
 
   onDragEnd(e) {
