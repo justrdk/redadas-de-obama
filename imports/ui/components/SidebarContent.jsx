@@ -14,12 +14,19 @@ const styles = {
     color: '#757575',
     textDecoration: 'none',
   },
-	sidebarLinkLogout: {
+	sidebarLinkLoggedOut: {
     display: 'block',
     padding: '16px 0px',
     color: '#c8c8c8',
     textDecoration: 'none',
   },
+	sidebarLinkLoggedIn: {
+		display: 'block',
+    padding: '16px 0px',
+    color: '#806565',
+    textDecoration: 'none',
+		fontWeight: '800'
+	},
   divider: {
     margin: '8px 0',
     height: 1,
@@ -53,25 +60,9 @@ export default class SidebarContent extends TrackerReact(Component) {
 
 
 					<div style={styles.divider} />
-					<a id="logout" href="" style={styles.sidebarLinkLogout} onClick={this.callLogout}>Salir</a>
+					<a id="logout" href="" style={Meteor.user() ? styles.sidebarLinkLoggedIn : styles.sidebarLinkLoggedOut} onClick={this.callLogout}>Salir</a>
 	      </div>
 	    </MaterialTitlePanel>
 	  );
 	}
 }
-
-// const SidebarContent = (props) => {
-//   this.propTypes = {
-//     style: React.PropTypes.object,
-//   };
-//   const style = props.style ? {...styles.sidebar, ...props.style} : styles.sidebar;
-//
-//
-// };
-
-// SidebarContent.callLogout = function(e) {
-// 	e.preventDefault();
-// 	Meteor.logout();
-// };
-//
-// export default SidebarContent;
