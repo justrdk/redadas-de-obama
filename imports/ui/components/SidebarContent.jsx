@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component} from 'react';
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import MaterialTitlePanel from './MaterialTitlePanel';
+import { Meteor } from 'meteor/meteor';
 
 const styles = {
   sidebar: {
@@ -30,32 +32,46 @@ const styles = {
   },
 };
 
-const SidebarContent = (props) => {
-  this.propTypes = {
-    style: React.PropTypes.object,
-  };
-  const style = props.style ? {...styles.sidebar, ...props.style} : styles.sidebar;
+export default class SidebarContent extends TrackerReact(Component) {
+	constructor(props) {
+		super(props);
 
-	// This should be deleted soon
-  const links = [];
+		this.state = {};
+	}
 
-  for (let ind = 0; ind < 10; ind++) {
-    links.push(
-      <a key={ind} href="#" style={styles.sidebarLink}>Mock menu item {ind}</a>);
-  }
+	callLogout(e) {
+		e.preventDefault();
+		Meteor.logout();
+	}
 
-  return (
-    <MaterialTitlePanel title="Menu" style={style}>
-      <div style={styles.content}>
-        <a href="/" style={styles.sidebarLink}>Inicio</a>
-        <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
+	render() {
+		return (
+	    <MaterialTitlePanel title="Menu" style={styles.sidebar}>
+	      <div style={styles.content}>
+	        <a href="/" style={styles.sidebarLink}>Inicio</a>
+	        <a href="/alertas" style={styles.sidebarLink}>Alertas</a>
 
 
-				<div style={styles.divider} />
-				<a id="logout" href="#" style={styles.sidebarLinkLogout}>Salir</a>
-      </div>
-    </MaterialTitlePanel>
-  );
-};
+					<div style={styles.divider} />
+					<a id="logout" href="" style={styles.sidebarLinkLogout} onClick={this.callLogout}>Salir</a>
+	      </div>
+	    </MaterialTitlePanel>
+	  );
+	}
+}
 
-export default SidebarContent;
+// const SidebarContent = (props) => {
+//   this.propTypes = {
+//     style: React.PropTypes.object,
+//   };
+//   const style = props.style ? {...styles.sidebar, ...props.style} : styles.sidebar;
+//
+//
+// };
+
+// SidebarContent.callLogout = function(e) {
+// 	e.preventDefault();
+// 	Meteor.logout();
+// };
+//
+// export default SidebarContent;
