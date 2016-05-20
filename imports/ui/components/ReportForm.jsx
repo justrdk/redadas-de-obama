@@ -48,6 +48,7 @@ export default class ReportForm extends TrackerReact(Component) {
 								lat: latitude,
 								lng: longitude
 							},
+							userId: Meteor.userId(),
 							media: []
 						};
 
