@@ -3,6 +3,7 @@ import {mount} from 'react-mounter';
 import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import { Meteor } from 'meteor/meteor';
+import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -51,18 +52,25 @@ export default class Alertas extends TrackerReact(Component) {
 				<h2>
 					Alertas
 				</h2>
+				{
+					Meteor.user() ?
+					<span>
+					<Toggle
+						label="Recibe alertas de redadas"
+						labelPosition="right"
+						style={styles.toggle}
+						id="alert-status"
+						defaultToggled={false}
+						onToggle={this.handleAlertChange} />
+					<br />
+					<TextField hintText="Tu numero celular" id="cel-number" />
+					<br />
+					<RaisedButton type="submit" className="report-submit" label="Inscribir a Alertas" primary={true} style={styles.button} />
+					</span>
+					:
+					<AccountsUIWrapper />
+				}
 
-				<Toggle
-					label="Recibe alertas de redadas"
-					labelPosition="right"
-					style={styles.toggle}
-					id="alert-status"
-					defaultToggled={false}
-					onToggle={this.handleAlertChange} />
-				<br />
-				<TextField hintText="Tu numero celular" id="cel-number" />
-				<br />
-				<RaisedButton type="submit" className="report-submit" label="Inscribir a Alertas" primary={true} style={styles.button} />
 
 			</div>
 		)
