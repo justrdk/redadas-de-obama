@@ -2,8 +2,6 @@ import {Raids} from './raids';
 
 Meteor.methods({
 	addRaid(data) {
-		console.log('Method addRaid successfully called.');
-
 		Raids.insert({
 			address: data.address,
 			description: data.description,

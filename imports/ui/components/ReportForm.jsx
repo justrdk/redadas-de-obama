@@ -51,8 +51,6 @@ export default class ReportForm extends TrackerReact(Component) {
 							media: []
 						};
 
-						console.log('Raid data: ' + raidData);
-
 						Meteor.call('addRaid', raidData, (err, data)=> {
 							if (!err) {
 								console.log('Submission was a success: ' + data);
@@ -60,19 +58,6 @@ export default class ReportForm extends TrackerReact(Component) {
 								console.log('Submission failed: ' + err);
 							}
 						});
-
-						// Raids.insert({
-						// 	address: address,
-						// 	description: description,
-						// 	createdOn: new Date(),
-						// 	geoLocation: {
-						// 		lat: latitude,
-						// 		lng: longitude
-						// 	},
-						// 	media: []
-						// });
-
-
 
         } else {
             alert("Request failed.")
