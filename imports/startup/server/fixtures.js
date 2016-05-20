@@ -1,6 +1,6 @@
-if( false ) {
+import { Raids } from '../../api/raids/raids.js';
 
-	console.log(Raids.find().count());
+if( Raids.find().fetch().length === 0 ) {
 
 	Raids.insert( {
 		address: '85004',

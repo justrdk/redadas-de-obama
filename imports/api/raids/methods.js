@@ -10,6 +10,7 @@ Meteor.methods({
 				lat: data.geoLocation.lat,
 				lng: data.geoLocation.lng
 			},
+			userId: data.userId,
 			media: data.media
 		});
 	}
