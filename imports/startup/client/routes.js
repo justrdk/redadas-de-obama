@@ -2,16 +2,11 @@ import React from 'react';
 import {mount} from 'react-mounter';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 //import FlowRouter from 'meteor/kadira:flow-router';
-
+import Main from '../../ui/layouts/Main.jsx';
 // Import Pages
 import Home from '../../ui/pages/Home.jsx';
-import Reporta from '../../ui/pages/Reporta.jsx';
 import Alertas from '../../ui/pages/Alertas.jsx';
-import Comparte from '../../ui/pages/Comparte.jsx';
-import Privacidad from '../../ui/pages/Privacidad.jsx';
 import Login from '../../ui/pages/Login.jsx';
-
-import Main from '../../ui/layouts/Main.jsx';
 
 //const publicRoutes = FlowRouter.group( { name: 'public' } );
 
@@ -22,32 +17,11 @@ FlowRouter.route("/", {
     }
 });
 
-FlowRouter.route("/reporta", {
-		name: 'reporta',
-    action() {
-        mount(Main, {yield: <Reporta/>});
-    }
-});
-
 FlowRouter.route("/alertas", {
 		name: 'alertas',
 		//triggersEnter: [AccountsTemplates.ensureSignedIn],
     action: function(params, queryParams) {
         mount(Main, {yield: <Alertas/>});
-    }
-});
-
-FlowRouter.route("/comparte", {
-		name: 'comparte',
-    action() {
-        mount(Main, {yield: <Comparte/>});
-    }
-});
-
-FlowRouter.route("/privacidad", {
-		name: 'privacidad',
-    action() {
-        mount(Main, {yield: <Privacidad/>});
     }
 });
 

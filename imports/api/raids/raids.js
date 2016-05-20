@@ -1,4 +1,7 @@
-Raids = new Mongo.Collection( 'raids' );
+import { Mongo } from 'meteor/mongo';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+export const Raids = new Mongo.Collection( 'raids' );
 
 Raids.schema = new SimpleSchema({
   address: {type: String, regEx: SimpleSchema.RegEx.ZipCode},

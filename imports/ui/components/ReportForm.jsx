@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Raids} from '../../api/raids/raids.js';
 
 const style = {
   margin: 12,
 };
+
+
 
 export default class ReportForm extends TrackerReact(Component) {
 
@@ -16,7 +19,7 @@ export default class ReportForm extends TrackerReact(Component) {
 
 	    this.state = {
 				subscription: {
-					raids: Meteor.subscribe('raids')
+					raids: Meteor.subscribe('allRaids')
 				}
 	    };
 	}
@@ -37,8 +40,7 @@ export default class ReportForm extends TrackerReact(Component) {
             var latitude = results[0].geometry.location.lat();
             var longitude = results[0].geometry.location.lng();
 
-
-						Raids.insert({
+						var raidData = {
 							address: address,
 							description: description,
 							createdOn: new Date(),
@@ -47,6 +49,14 @@ export default class ReportForm extends TrackerReact(Component) {
 								lng: longitude
 							},
 							media: []
+						};
+
+						Meteor.call('addRaid', raidData, (err, data)=> {
+							if (!err) {
+								console.log('Submission was a success: ' + data);
+							} else {
+								console.log('Submission failed: ' + err);
+							}
 						});
 
         } else {
@@ -61,7 +71,7 @@ export default class ReportForm extends TrackerReact(Component) {
 	}
 
 	componentWillUnmount() {
-
+		this.state.subscription.raids.stop();
 	}
 
 	render() {
