@@ -26,7 +26,8 @@ fortawesome:fontawesome
 aldeed:simple-schema
 ultimatejs:tracker-react
 #useraccounts:core
-#accounts-password
+accounts-password
+accounts-ui
 #accounts-ui-unstyled
 #useraccounts:materialize
 #useraccounts:flow-routing
