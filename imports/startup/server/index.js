@@ -1,3 +1,4 @@
-import './register-api';
-import './publish';
 import './fixtures';
+import './publish';
+import './methods';
+import './accounts-config.js';

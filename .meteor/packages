@@ -36,6 +36,9 @@ http
 check
 session
 email
+mdg:validated-method
+mdg:validation-error
+aldeed:collection2
 #softwarerero:accounts-t9n
 #service-configuration
 #arillo:flow-router-helpers

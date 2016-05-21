@@ -46,7 +46,7 @@ export default class Alertas extends TrackerReact(Component) {
 		this.state.getsAlerts = !this.state.getsAlerts;
 		//this.setState({getsAlerts: !this.state.getsAlerts});
 		console.log(this.state.getsAlerts);
-		Meteor.user().profile.getsAlerts = this.state.getsAlerts;
+		Meteor.user().getsAlerts = this.state.getsAlerts;
 	}
 
 

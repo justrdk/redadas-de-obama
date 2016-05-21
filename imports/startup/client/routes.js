@@ -1,5 +1,6 @@
 import React from 'react';
-import {mount} from 'react-mounter';
+import { mount } from 'react-mounter';
+import { Accounts } from 'meteor/accounts-base';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 //import FlowRouter from 'meteor/kadira:flow-router';
 import Main from '../../ui/layouts/Main.jsx';
@@ -7,6 +8,10 @@ import Main from '../../ui/layouts/Main.jsx';
 import Home from '../../ui/pages/Home.jsx';
 import Alertas from '../../ui/pages/Alertas.jsx';
 import Login from '../../ui/pages/Login.jsx';
+
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_ONLY',
+});
 
 //const publicRoutes = FlowRouter.group( { name: 'public' } );
 
