@@ -19,11 +19,8 @@ export const addRaid = new ValidatedMethod({
     }).validator(),
     run({ address, description, createdOn, geoLocation, media }) {
         if (!this.userId) {
-            console.log('shouldnt enter here');
             throw new Meteor.Error('Necesita iniciar sesion para realizar esta operacion');
         }
-
-        console.log('im here');
 
         const raid = {
             address,
@@ -36,7 +33,7 @@ export const addRaid = new ValidatedMethod({
             userId: this.userId,
             media
         };
-        console.log('inserting raid');
+
         Raids.insert(raid);
     }
 });
