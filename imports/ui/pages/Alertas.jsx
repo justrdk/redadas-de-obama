@@ -7,6 +7,7 @@ import AccountsUIWrapper from '../AccountsUIWrapper.jsx';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import AlertStatus from '../components/AlertStatus.jsx';
 
 const styles = {
   block: {
@@ -26,7 +27,7 @@ export default class Alertas extends TrackerReact(Component) {
 	    super(props);
 
 	    this.state = {
-				alertStatus: false,
+				getsAlerts: false,
 				subscription: {
 
 				}
@@ -42,26 +43,33 @@ export default class Alertas extends TrackerReact(Component) {
   }
 
 	handleAlertChange() {
-
-		console.log('toggled');
+		this.state.getsAlerts = !this.state.getsAlerts;
+		//this.setState({getsAlerts: !this.state.getsAlerts});
+		console.log(this.state.getsAlerts);
+		Meteor.user().profile.getsAlerts = this.state.getsAlerts;
 	}
 
+
 	render() {
+
+		let self = this;
 		return (
 			<div>
 				<h2>
 					Alertas
 				</h2>
+
 				{
 					Meteor.user() ?
 					<span>
+					<AlertStatus getsAlerts={this.state.getsAlerts} />
 					<Toggle
 						label="Recibe alertas de redadas"
 						labelPosition="right"
 						style={styles.toggle}
 						id="alert-status"
 						defaultToggled={false}
-						onToggle={this.handleAlertChange} />
+						onToggle={this.handleAlertChange.bind(this)} />
 					<br />
 					<TextField hintText="Tu numero celular" id="cel-number" />
 					<br />

@@ -5,6 +5,10 @@ A web app for crowdsourcing immigration raid info so undocumented people can avo
 
 ![https://dl.dropboxusercontent.com/u/16972085/cosecha/160513-redadas-de-obama.jpg](https://dl.dropboxusercontent.com/u/16972085/cosecha/160513-redadas-de-obama.jpg)
 
+![Home Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-05-20%20at%206.40.50%20PM.png)
+
+![Alerts Page](https://dl.dropboxusercontent.com/u/16972085/cosecha/redadas-de-obama/Screen%20Shot%202016-05-20%20at%206.41.00%20PM.png)
+
 ## Mission
 
 Create a web app where people can do the following things:
